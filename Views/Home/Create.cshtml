@@ -1,0 +1,42 @@
+﻿@model SimpleExampleAuth.Models.Car
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление машины</title>
+    <link rel="stylesheet" href="~/css/CreateStyles.css" />
+</head>
+<body>
+    <h2>Добавление машины</h2>
+    <form asp-action="create" asp-controller="home">
+        <p>
+            <label asp-for="Brand">Бренд</label>
+            <input type="text" asp-for="Brand" />
+        </p>
+        <p>
+            <label asp-for="Model">Модель</label>
+            <input type="text" asp-for="Model" />
+        </p>
+        <p>
+            <label asp-for="EngineCapacity">Объем двигателя</label>
+            <input type="text" asp-for="EngineCapacity" />
+        </p>
+        <p>
+            <label asp-for="EnginePower">Мощность двигателя</label>
+            <input type="text" asp-for="EnginePower" />
+        </p>
+        <p>
+            <label asp-for="CPP">КПП</label>
+            <input type="text" asp-for="CPP" />
+        </p>
+        <p>
+            <label asp-for="MaxSpeed">Максимальная скорость</label>
+            <input type="text" asp-for="MaxSpeed" />
+        </p>
+        <p>
+            <input type="submit" id="submitCreate" value="Отправить" />
+        </p>
+    </form>
+    <script src="~/js/CreateScripts.js"></script>
+</body>
+</html>

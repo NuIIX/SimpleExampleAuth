@@ -1,0 +1,59 @@
+﻿@model SimpleExampleAuth.Models.User
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="~/css/RegStyles.css" />
+</head>
+<body>
+    <header>
+        <h1>Регистрация</h1>
+        <nav>
+            <a href="#">Главная</a> |
+            <a href="#">О нас</a> |
+            <a href="#">Контакты</a>
+        </nav>
+    </header>
+
+    <form asp-action="RegSumbit" asp-controller="Account" onsubmit="return validatePasswords();">
+        <h2>Форма регистрации</h2>
+
+        <label asp-for="UserName">Имя пользователя:</label>
+        <input type="text" asp-for="UserName" required>
+
+        <label asp-for="Email">Адрес электронной почты:</label>
+        <input type="email" asp-for="Email" required>
+
+        <label asp-for="Password">Пароль:</label>
+        <input type="password" asp-for="Password" id="password" required>
+
+        <label for="confirm_password">Подтвердите пароль:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+
+        <label asp-for="FirstName">Имя:</label>
+        <input type="text" asp-for="FirstName">
+
+        <label asp-for="LastName">Фамилия:</label>
+        <input type="text" asp-for="LastName">
+
+        <label asp-for="DOB">Дата рождения:</label>
+        <input type="date" asp-for="DOB">
+
+        <label asp-for="Phone">Номер телефона:</label>
+        <input type="tel" asp-for="Phone">
+
+        <div>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">Я согласен с Условиями предоставления услуг и Политикой конфиденциальности.</label>
+        </div>
+
+        <form asp-controller="Account" asp-action="RegSumbit" method="post" id="registrationButton">
+        <input type="submit" value="Подтвердить"/>
+        </form>
+
+    </form>
+
+    <script src="~/js/RegScripts.js"></script>
+</body>
+</html>
